@@ -190,7 +190,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
-AWS_STORAGE_BUCKET_NAME = 'mezzjax'
+AWS_STORAGE_BUCKET_NAME = 'hellomezz'
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 # Absolute path to the directory static files should be collected to.
@@ -229,6 +229,7 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
+    "jaxhome",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -335,10 +336,10 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 
 ###these are replicated from the local_settings.py file, but also need the heroku aws config line from https://devcenter.heroku.com/articles/s3 to work
 
-#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-#COMPRESS_URL = "http://mezzjax.s3.amazonaws.com/"
+COMPRESS_URL = "http://hellomezz.s3.amazonaws.com/"
 COMPRESS_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 #to stop images expiring
