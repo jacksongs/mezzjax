@@ -190,7 +190,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
-AWS_STORAGE_BUCKET_NAME = 'hellomezz'
+AWS_STORAGE_BUCKET_NAME = 'mezzjax'
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 # Absolute path to the directory static files should be collected to.
@@ -339,7 +339,7 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-COMPRESS_URL = "http://hellomezz.s3.amazonaws.com/"
+COMPRESS_URL = "http://mezzjax.s3.amazonaws.com/"
 COMPRESS_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 #to stop images expiring
