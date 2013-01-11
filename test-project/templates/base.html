@@ -45,44 +45,23 @@ $(function() {
 </head>
 <body id="{% block body_id %}body{% endblock %}">
 
-            <div class="creepingmenu docked dark">
-                <div class="container">
-                    <div class="row-fluid">
-                        <div class="span12 clearfix">
-                            <div class="ace-navbar">
-                                
-
-<ul class="nav"><!--
-                    <li><a href="/">Home</a><div class="nav_underline"></div></li><li>&nbsp;|&nbsp;</li>
-                    --><li><a href="/" class="navbar_floatleft"><img src="/media/aceedventure/uploads/logos_white.png" width="140px;"></a></li><li id="dropdown-menu-ace-edventure-programme" class="navbar_wordlinks "><a href="/ace-edventure-programme" data-toggle="dropdown" class="dropdown-toggle">
-                                    About Us
-                                    <span class="caret"></span></a><ul class="dropdown-menu"><li><a id="dropdown-menu-ace-edventure-programme-about" href="/ace-edventure-programme/about/">
-                                        Profile
-                                    </a></li><li><a id="dropdown-menu-learning-centres" class="ace-divider">
-                                    Learning Centres
-                                    </a></li><li><a id="dropdown-menu-learning-centres-international-schools" href="/learning-centres/international-schools/">
-                                1. International Schools
-                            </a></li><li><a id="dropdown-menu-learning-centres-english-language-centre" href="/learning-centres/english-language-centre">
-                                2. English Language Centre
-                            </a></li><li><a id="dropdown-menu-learning-centres-math-science-tuition-centre" href="/learning-centres/math-science-tuition-centre">
-                                3. Maths &amp; Science Tuition Centre
-                            </a></li><li><a id="dropdown-menu-learning-centres-private-tutoring-centre" href="/learning-centres/private-tutoring-centre">
-                                4. Private Tutoring Centre
-                            </a></li></ul></li><li id="dropdown-menu-contact-us" class="navbar_wordlinks "><a href="/contact-us/">
-                                    Contact Us
-                                </a></li><li class="nav_underline"></li></ul>
-
-                                <div class="pull-right">
-                                    <div class="btn btn-mini btn-inverse btn_signin2 navbar_floatright" type="button" style="margin-top: 0px;">Sign In</div>
-                                    <!--<div class="btn_signin navbar_floatright" style="margin-top: 0px;"></div>-->
-                                    <div class="fb-like navbar_floatright" data-href="http://www.facebook.com/AceEdVentureProgramme" data-layout="button_count" data-send="false" data-width="100" data-show-faces="false" data-colorscheme="light"></div>
-                                </div>
-                            </div>
-                            <div class="show_indicator"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="navbar navbar-inverse">
+<div class="navbar-inner">
+<div class="container">
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+    {% if settings.SITE_TAGLINE %}<p class="tagline">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+    <div class="nav-collapse">
+        {% search_form "all" %}
+        {% page_menu "pages/menus/dropdown.html" %}
+    </div>
+</div>
+</div>
+</div>
 
 <div class="container">
 
