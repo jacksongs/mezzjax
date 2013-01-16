@@ -449,7 +449,6 @@ jQuery(document).ready(function($){
 	
 });		
 
-
 /* -------------------- Isotope --------------------- */
 
 jQuery(document).ready(function () {
@@ -527,6 +526,7 @@ jQuery(document).ready(function () {
 	});
 	
 });
+
 
 /* ------------------ Tabs ----------------- */
 

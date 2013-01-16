@@ -79,14 +79,18 @@ $(function() {
             {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                {% for page in page_branch %}
-                <li class="{% if on_home %} active{% endif %}">
-                <a href="{% url "home" %}">{% trans "what" %}</a>
-            	</li>
-                {% endfor %}
                 {% page_menu "pages/menus/dropdown.html" %}
                 </ul>
-                {% search_form %}
+            </div>
+            <div class="nav pull-right">
+            <a href="http://vimeo.com/jacksongs" class="social-vimeo pull-right"></a>
+            <a href="http://twitter.com/jacksongs" class="social-twitter pull-right"></a>
+            <a href="http://instagram.com/jacksongs" class="social-instagram pull-right"></a>
+            <a href="http://www.facebook.com/jacksongs" class="social-facebook pull-right"></a>
+            <a href="http://au.linkedin.com/in/jacksongs" class="social-linkedin pull-right"></a>
+            </div>
+            <div class="navbar-search pull-right">
+            {% search_form %}
             </div>
         </div>
     </div>
@@ -106,11 +110,7 @@ $(function() {
 </div>
 
 <div class="container">
-    <div id="page-title">
 
-        <h2>{% block title %}{% endblock %}</h2>
-
-    </div>
 
 {% block main %}{% endblock %}
 
@@ -119,18 +119,31 @@ $(function() {
     <div class="container">
         <div class="row-fluid">
             <div class="span3">
-                <div align=center><p><a href="#" class="social-instagram"></p></a>
-                <img src="http://distilleryimage3.s3.amazonaws.com/5bc277a8452a11e2b1f822000a1f9751_5.jpg"</img></div>
-            </div>
+                <h3><i class="glyphicons-icon white user"></i>About Jackson</h3>
+                <ul class="arrow_list">
+                    <li>Self-taught web dev</li>
+                    <li>Love of media, arts and sport</li>
+                    <li>Ex corporate law and public policy</li>
+                    <li>Big on new media opportunities</li>
+                    <li><a href="/contact">Click here for enquiries</a></li>
+                </ul>
+            </div>   
             <div class="span3">
+                <h3>
+                <i class="glyphicons-icon white twitter"></i>
+                Latest Tweet
+                </h3>
                 {% block tweets %}
                 {% ifinstalled mezzanine.twitter %}
                 {% include "twitter/tweets.html" %}
                 {% endifinstalled %}
                 {% endblock %}
-            </div>
+            </div>       
             <div class="span3">
-                <div align=center><p><a href="#" class="social-vimeo"></a><br></p></div>
+                
+                <h3><i class="glyphicons-icon white vimeo"></i>From Vimeo</h3>
+            
+                
                 <style id="badge-styles">
                 /* You can modify these CSS styles */
                 .vimeoBadge { margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
@@ -149,17 +162,58 @@ $(function() {
                 <script src="https://vimeo.com/jacksongs/badgeo/?script=1&badge_layout=horizontal&badge_quantity=1&badge_size=200&badge_stream=uploaded&show_titles=no"></script>
                 </div>
                 </div>
-                </div>
 
             </div>
-            <div class="span2">
-                <p>This site was put together with Mezzanine, Django, Heroku, Amazon Web Services, and a modified Tabula Theme from Wrap Bootstrap</p>
+            </div>     
+            <div class="span3">
+                <h3><i class="glyphicons-icon white home"></i>These digs</h3>
+                <ul class="arrow_list">
+                    <li>Built with Aussie-made Mezzanine, atop Django, from Python</li>
+                    <li>Served by Heroku and AWS S3</li>
+                    <li>Front-end adapted from the Tabula theme available from Wrap Bootsrap</li>
+                    <li>Repo available at <a href="http://github.com/jacksongs">github</a><li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-{% include "includes/footer_scripts.html" %}
+    <div id="under-footer">
+        
+        <!-- start: Container -->
+        <div class="container">
+            
+            <!-- start: Row -->
+            <div class="row-fluid">
+
+                <!-- start: Under Footer Copyright -->
+                <div class="span11">
+                    
+                    <div id="under-footer-copyright">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a> Excluding images/video, you can use and share parts of this website under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                    </div>
+                    
+                </div>
+                <!-- end: Under Footer Copyright -->
+
+                <!-- start: Under Footer Back To Top -->
+                <div class="span1">
+                        
+                    <div id="under-footer-back-to-top">
+                        <a href="#"></a>
+                    </div>
+                
+                </div>
+                <!-- end: Under Footer Back To Top -->
+            
+            </div>
+            <!-- end: Row -->
+            
+        </div>  
+        <!-- end: Container  -->
+        
+    </div>
+    <!-- end: Under Footer -->  
 
 </body>
 

@@ -1,13 +1,13 @@
-{% load i18n future pages_tags %}
+{% load i18n future pages_tags mezzanine_tags %}
 {% spaceless %}
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
-<ul class="nav pull-right">
+<ul class="nav">
     {% for page in page_branch %}
     {% if page.is_primary and forloop.first %}
     <li class="{% if on_home %} active{% endif %}" id="dropdown-menu-{{ page.html_id }}">
-        <a href="{% url "home" %}">{% trans "Home" %}</a>
+        <a href="{% url "home" %}">{% trans "space" %}</a>
     </li>
     
     {% endif %}

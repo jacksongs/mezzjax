@@ -1,56 +1,67 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load blog_tags i18n %}
+{% load blog_tags future mezzanine_tags i18n %}
 
 {% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Home" %}{% endblock %}
+
 
 {% block breadcrumb_menu %}
 <li class="active">{% trans "Home" %}</li>
 {% endblock %}
 
+
+
+
 {% block main %}
-		
 
 <div id="wrapper">
 
 	<div id="filters">
 		<ul class="option-set" data-option-key="filter">
-			<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
+			<li><a href="#filter" class="selected" data-option-value="*">all</a></li>
 			<li>/</li>
 			<li><a href="#filter" data-option-value=".art">art</a></li>
 			<li>/</li>
+			<li><a href="#filter" data-option-value=".code">code</a></li>
+			<li>/</li>
+			<li><a href="#filter" data-option-value=".home">home</a></li>
+			<li>/</li>
 			<li><a href="#filter" data-option-value=".law">law</a></li>
 			<li>/</li>
-			<li><a href="#filter" data-option-value=".sport">sport</a></li>
+			<li><a href="#filter" data-option-value=".media">media</a></li>
 			<li>/</li>
-			<li><a href="#filter" data-option-value=".impressive">imp</a></li>
+			<li><a href="#filter" data-option-value=".sport">sport</a></li>
+			
 		</ul>
 	</div>
-	
-
 
 	<!-- start: Portfolio -->
 	<div id="wall" class="row-fluid">
 
-	{% blog_recent_posts limit=15 as recent_posts %}
+
+	{% blog_recent_posts limit=5 as recent_posts %}
 	{% if recent_posts %}
 	{% for post in recent_posts %}
 	<div class="span3 item{% for hit in post.categories.all %} {{ hit }}{% endfor %}">
-	<div class="picture">
-	<a class="image" href="project.html" title="Title"><img src="img/photo1.jpg" alt=""/></a>
+		<div class="picture">
+		{% if post.featured_image %}
+        <a class="image" href="{{ post.get_absolute_url }}"><img src="{{ MEDIA_URL }}{% thumbnail post.featured_image 200 0 %}"/></a>
+        {% endif %}
+    	</div>
 		<div class="description">
+			<h3>{{ post.title }}</h3>
 			<p>
-				{{ post.title }}Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+			{{ post.description_from_content|safe }}
 			</p>
 		</div>
 	</div>
-	</div>
+
 	{% endfor %}
 	{% endif %}
 
+	</div>
 </div>
-
+</div>
+<div class = "scripts">
 <!-- start: Java Script -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ STATIC_URL }}js/jquery-1.8.2.js"></script>
@@ -77,6 +88,7 @@
 <script defer="defer" src="{{ STATIC_URL }}js/modernizr.js"></script>
 <script defer="defer" src="{{ STATIC_URL }}js/retina.js"></script>
 <script defer="defer" src="{{ STATIC_URL }}js/custom.js"></script>
+</div>
 <!-- end: Java Script -->
 
 {% endblock %}
