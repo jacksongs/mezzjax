@@ -1,9 +1,0 @@
-#!/Users/jacksongs/Dropbox/Geek/jaxweb/mezzjax/mj/bin/python
-# EASY-INSTALL-ENTRY-SCRIPT: 'Mezzanine==1.3.0','console_scripts','mezzanine-project'
-__requires__ = 'Mezzanine==1.3.0'
-import sys
-from pkg_resources import load_entry_point
-
-sys.exit(
-   load_entry_point('Mezzanine==1.3.0', 'console_scripts', 'mezzanine-project')()
-)
