@@ -8,7 +8,7 @@ h6 a {color:#666;}
 .right h6 {margin-top:10px;}
 .panel {background:rgba(220,220,220, 0.1); padding:10px 20px; margin-bottom:20px;
         line-height:170%; border:1px solid #eee; border-radius:5px;}
-p, ul {line-height:22px; margin-top:5px; margin-bottom:15px;}
+p, ul {margin-bottom:-5px;}
 li {line-height:20px;}
 img {box-shadow:0 0 10px #bbb;}
 .btn {cursor:pointer;}
@@ -18,7 +18,7 @@ img {box-shadow:0 0 10px #bbb;}
 @media (max-width:979px){.brand {padding-right:20px !important;}}
 .navbar {z-index:500;}
 .navbar-inner {border-radius:0;}
-.navbar-search {margin-left:10px; margin-top:10px;}
+.navbar-search {margin-left:10px; margin-top:10px; margin-right:10px;}
 .navbar-search * {border-radius:4px !important; margin:0 2px !important;}
 .navbar-search select {width:auto;}
 .navbar-search .btn {margin-top:1px !important; margin-left:4px !important;}

@@ -31,7 +31,7 @@
     <!--start: Row -->
     <div class="row-fluid">
 
-        <div class="posts span8">
+        <div class="posts span9">
             {% for blog_post in blog_posts.object_list %}
             <div class="post{% if forloop.counter == 1 %} first{% endif %}">
                 <div class="picture">
@@ -45,17 +45,17 @@
                 <div class="post-content">
                     <div class="post-title">
                     {% block blog_post_list_post_title %}
-                    {% editable blog_post.title %}
+
                     <h2>
                     <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
                     </h2>
-                    {% endeditable %}
+
                     {% endblock %}
                     </div>
 
                     <div class="post-meta">
                     {% block blog_post_list_post_metainfo %}
-                    {% editable blog_post.publish_date %}
+
 
                     <span><i class="fa-icon-time"></i>{% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}</span>
                     </h6>
@@ -73,22 +73,14 @@
                     </a>
                     {% endif %}
                     </span>
-                    {% if blog_post.category_list %}
-                    {% trans "in" %}
-                    {% for category in blog_post.category_list %}
-                    <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>
-                    {% endfor %}
-                    {% endif %}
-                    {% endeditable %}
+
                     {% endblock %}
                     </div>
                 </div>
                 <div class="post-description">
                 <p>
                 {% block blog_post_list_post_content %}
-                {% editable blog_post.content %}
                 {{ blog_post.description_from_content|safe }}
-                {% endeditable %}
                 <a class="post-entry" href="post.html">Read More...</a>
                 {% endblock %}
                 </div>
@@ -102,7 +94,7 @@
         </div>
         {% block right_panel %}
 
-<div class="sidebar span4 hidden-phone">
+<div class="sidebar span3 hidden-phone">
 
 {% include "blog/includes/filter_panel.html" %}
 
@@ -110,6 +102,7 @@
 {% endblock %}
     </div>
 
+</div>
 </div>
 
 {% pagination_for blog_posts %}

@@ -375,4 +375,6 @@ except ImportError:
 else:
     set_dynamic_settings(globals())
 
+#for local date formatting
+DATE_FORMAT = 'l d F Y'
 

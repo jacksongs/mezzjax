@@ -10,6 +10,13 @@
 
 
 
+{% block title %}
+{% if page %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% else %}
+{% trans "in parts" %}
+{% endif %}
+{% endblock %}
 
 {% block main %}
 
@@ -17,13 +24,11 @@
 
 	<div id="filters">
 		<ul class="option-set" data-option-key="filter">
-			<li><a href="#filter" class="selected" data-option-value="*">all</a></li>
-			<li>/</li>
+			<li><a href="#filter" class="selected" data-option-value="*">show all</a></li>
+			<li>//</li>
 			<li><a href="#filter" data-option-value=".art">art</a></li>
 			<li>/</li>
 			<li><a href="#filter" data-option-value=".code">code</a></li>
-			<li>/</li>
-			<li><a href="#filter" data-option-value=".home">home</a></li>
 			<li>/</li>
 			<li><a href="#filter" data-option-value=".law">law</a></li>
 			<li>/</li>
@@ -44,14 +49,12 @@
 	<div class="span3 item{% for hit in post.categories.all %} {{ hit }}{% endfor %}">
 		<div class="picture">
 		{% if post.featured_image %}
-        <a class="image" href="{{ post.get_absolute_url }}"><img src="{{ MEDIA_URL }}{% thumbnail post.featured_image 200 0 %}"/></a>
+        <a class="image" href="{{ post.get_absolute_url }}"><img src="{{ MEDIA_URL }}{% thumbnail post.featured_image 200 0 %}"/>
         {% endif %}
     	</div>
 		<div class="description">
-			<h3>{{ post.title }}</h3>
-			<p>
+			<h3>{{ post.title }}</h3></a>
 			{{ post.description_from_content|safe }}
-			</p>
 		</div>
 	</div>
 
