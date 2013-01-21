@@ -8,7 +8,6 @@ dj-database-url==0.2.1
 django-appconf==0.5
 django-compressor==1.2
 django-storages==1.1.6
-filebrowser-safe==0.2.14
 grappelli-safe==0.2.11
 gunicorn==0.17.1
 html5lib==0.95
@@ -19,3 +18,4 @@ six==1.2.0
 wsgiref==0.1.2
 
 -e git+http://github.com/errkk/gitpil#egg=PIL
+-e git+http://github.com/jacksongs/filebrowser-safe#egg=filebrowser-safe

@@ -382,4 +382,7 @@ DATE_FORMAT = 'l d F Y'
 
 COMPRESS_OUTPUT_DIR = ''
 
+FILEBROWSER_DIRECTORY = "uploads/"
+
+
 
