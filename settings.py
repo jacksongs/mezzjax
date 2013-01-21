@@ -251,6 +251,7 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
     "gunicorn",
     "storages",
+    "compressor",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -377,4 +378,8 @@ else:
 
 #for local date formatting
 DATE_FORMAT = 'l d F Y'
+
+
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter']
+
 
