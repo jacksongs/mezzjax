@@ -191,7 +191,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
 AWS_STORAGE_BUCKET_NAME = 'mezzjax'
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/static/'
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
