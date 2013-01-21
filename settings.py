@@ -380,6 +380,6 @@ else:
 DATE_FORMAT = 'l d F Y'
 
 
-COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter']
+COMPRESS_OUTPUT_DIR = ''
 
 
