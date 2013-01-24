@@ -26,7 +26,7 @@
 
 {% block main %}
 <!--start: Wrapper-->
-<div id="wrapper">
+<div id="wall">
         
     <!--start: Row -->
     <div class="row-fluid">
@@ -34,11 +34,11 @@
         <div class="posts span9">
 
             {% for blog_post in blog_posts.object_list %}
-            <div class="post{% if forloop.first %} first{% elif forloop.last %} last{% endif %}">
+            <div class="post">
 
 {% if blog_post.featured_image %}
 {% block blog_post_list_post_featured_image %}
-<a href="{{ blog_post.get_absolute_url }}"><img class="featured-thumb {% if forloop.counter|divisibleby:2 %}pull-left" margin-left=0{% else %}pull-right" margin-right=0{% endif %}" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 200 0 %}"></a>
+<a href="{{ blog_post.get_absolute_url }}"><img class="featured-thumb pull-left" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 200 0 %}"></a>
 {% endblock %}
 {% endif %}
                 <div class="post-content">
@@ -56,7 +56,7 @@
                     {% block blog_post_list_post_metainfo %}
 
 
-                    <span><i class="fa-icon-time"></i>{% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}</span>
+                    <span><i class="fa-icon-time"></i> {% blocktrans with sometime=blog_post.publish_date|date %}{{ sometime }}{% endblocktrans %}</span>
                     </h6>
                     
                     
@@ -90,7 +90,7 @@
 
         {% endfor %}
 
-
+{% pagination_for blog_posts %}
         </div>
         {% block right_panel %}
 
@@ -100,18 +100,20 @@
 
 </div>
 {% endblock %}
-    </div>
+
+
+
+
+
 
 </div>
 </div>
-
-{% pagination_for blog_posts %}
-
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_counts.html" %}
 {% endif %}
 
 {% endblock %}
+
 
 
 

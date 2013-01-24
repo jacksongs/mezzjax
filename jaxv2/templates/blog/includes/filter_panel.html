@@ -6,8 +6,8 @@
 <h3>{% trans "Recent Posts" %}</h3>
 <ul class="unstyled recent-posts">
 {% for recent_post in recent_posts %}
-<li><a href="{{ recent_post.get_absolute_url }}"
-    >{{ recent_post.title }}</a></li>
+<p><li><a href="{{ recent_post.get_absolute_url }}"
+    >{{ recent_post.title }}</a></li></p>
 {% endfor %}
 </ul>
 {% endif %}

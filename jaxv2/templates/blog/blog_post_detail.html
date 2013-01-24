@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block main %}
-<div id="wrapper">
+<div id="wall">
         
     <!--start: Row -->
     <div class="row-fluid">
@@ -86,8 +86,6 @@
                 {% endspaceless %}
                 {% endif %}
                 {% endblock %}
-
-                {% rating_for blog_post %}
 
                 {% block blog_post_detail_sharebuttons %}
                 {% set_short_url_for blog_post %}

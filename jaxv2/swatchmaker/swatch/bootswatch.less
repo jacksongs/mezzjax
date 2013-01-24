@@ -1,0 +1,373 @@
+// Swatch 2.2.2
+// Bootswatch
+// -----------------------------------------------------
+
+
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+
+a {
+  color: @pink;
+  text-decoration: none;
+}
+
+
+html body div#footer div#footerbox div#under-footer {
+	margin-bottom: -15px;
+	margin-top: 5px;
+}
+
+form {
+	margin:0;
+}
+// SCAFFOLDING
+// -----------------------------------------------------
+
+html { 
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	background: transparent;
+}
+
+#hello {
+	padding: 10px;
+	background-color:rgba(255,255,255,0.5);
+	text-align:center;
+	color: @gray;
+	font-size: 20px;
+	-webkit-border-top-left-radius: 25px;
+	-webkit-border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	-webkit-border-bottom-left-radius: 25px;
+	-webkit-border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+#curra {
+	color:rgba(255,255,255,0.5);
+
+	font-size: 27px;
+	text-align: center;
+	margin-top: 15px;
+}
+
+#footerbox {
+	padding:20px;
+	background-color:rgba(255,186,0,0.5);
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+#footer {
+	padding:10px;
+	background-color:rgba(255,255,255,0.5);
+	margin-bottom: 0px;
+}
+
+
+// NAVBAR
+// -----------------------------------------------------
+.navbar, 
+.navbar-inner, 
+.nav,
+.navbar-inverse {
+	background: transparent !important;
+	filter: none !important;
+	border: none;
+	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+	padding: 0px;
+	margin: 0;
+}
+
+.foot {
+	text-align: center;
+	color:@white;
+}
+
+.navbar .brand {
+  	position: relative;	
+  	padding: 15px 20px 15px 20px;
+  	color: @yellow;
+  	text-shadow: 0px 0px 0 @gray;
+  	font-weight: bold;
+  	font-size: 28px;
+	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+		 -o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+}
+
+.navbar .brand:hover {
+	color: @white;
+}
+
+.navbar .brand:after,
+.navbar .brand:before {
+	content: "";
+	height: 100%;
+  	position: absolute;	
+  	display: block;
+	font-size: 20px;
+	font-weight: 200;
+	right: 0px;
+	top: 0px;
+}
+
+.navbar .brand:before {
+	right: -2px;
+}
+
+.navbar .brand:hover {
+  text-decoration: none;
+}
+
+.navbar, 
+.navbar-inner, 
+.nav,
+.navbar-inverse {
+	background: transparent !important;
+	filter: none !important;
+	border: none;
+	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+	padding: 0px;
+	margin-top: 3px;
+}
+
+.navbar-inner {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.navbar .nav {
+  display: block;
+  float: left;
+  left: 0;
+  margin: 0 0 0 0;
+  position: relative;
+}
+
+.navbar .nav > li > a {
+	color: @gray;
+	text-shadow: 0px 0px 0 @gray;
+	font-size: 17px;
+	padding: 16px 8px;
+	padding: 12px 10px \9;
+	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+		 -o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  	background: transparent !important;		
+  	color: @white;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:focus {
+  	color: @gray !important;
+  	text-decoration: none;	
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+    background-color:rgba(255,255,255,0.5);
+	-webkit-border-top-left-radius: 25px;
+	-webkit-border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+}
+
+.navbar .nav > .active > a:hover {
+  	color: @white !important;
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+    background-color:rgba(255,255,255,0.5);
+	-webkit-border-top-left-radius: 25px;
+	-webkit-border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+}
+
+.navbar .nav .active a:hover > .caret {
+  	border-top-color: #fff !important;	
+  	border-bottom-color: #fff !important;	
+}
+
+.navbar-search {
+	margin-top: 10px;
+	margin-left: 3px;
+}
+
+.navbar-inverse .navbar-search .search-query {
+  background-color:rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.1);
+  border: 1;
+  box-shadow: 0px 0px 0 @gray;
+  color: @gray;
+  transition: none 0s ease 0s;
+}
+
+.navbar-inverse .navbar-search .search-query:-moz-placeholder {
+	color: @grayDark;
+  	font-size: 17px;
+}
+
+.navbar-search .search-query {
+  border-radius: 15px 15px 15px 15px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 0px 10px;
+}
+
+.navbar-inverse .navbar-search .search-query:focus, .navbar-inverse .navbar-search .search-query.focused {
+  background-color: #FFFFFF;
+  border: 0 none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  color: #333333;
+  outline: 0 none;
+  padding: 1px 11px;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  border-radius: 4px 4px 4px 4px;
+  color: #555555;
+  display: inline-block;
+  font-size: 17px;
+  height: 28px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  vertical-align: middle;
+}
+
+.icons {
+	margin-top: 2px;
+}
+
+#wall {
+	background-color:rgba(255,255,255,0.5);
+
+}
+
+#wall .item .picture img {
+	width: 100%; 
+	height: auto; 
+	position: relative;
+
+}
+
+.item {
+	padding:20px;
+
+}
+
+.post {
+	padding: 20px
+}
+
+.post img {
+	margin-right: 10px;
+
+}
+
+.pagination {
+	text-align: center;
+}
+
+html body div#footer div#footerbox div.container div.row-fluid div.span3 ul.unstyled li img {
+	float:left;
+	margin-right: 15px;
+}
+
+.share-twitter, .share-facebook, .share-twitter:hover, .share-facebook:hover {
+    color:#fff; margin:5px 5px 5px 0; font-weight:bold; text-shadow:none;}
+.share-twitter {background:#00a3d4 !important;}
+.share-facebook {background:#4667a6 !important;}
+
+.pager {
+	margin:0;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  border-radius: 15px 15px 15px 15px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 0 10px;
+}
+
+.pagination ul > li > a, .pagination ul > li > span {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #FFFFFF;
+  border-color: #DDDDDD;
+  border-image: none;
+  border-style: none;
+  border-width: 0px 0px 0px 0;
+  float: left;
+  line-height: 20px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.pagination ul {
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.pagination ul > li:last-child > a, .pagination ul > li:last-child > span {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+// NAV
+// -----------------------------------------------------
+
+// BUTTONS
+// -----------------------------------------------------
+
+// TABLES
+// -----------------------------------------------------
+
+// FORMS
+// -----------------------------------------------------
+
+// DROPDOWNS
+// -----------------------------------------------------
+
+// ALERTS, LABELS, BADGES
+// -----------------------------------------------------
+
+// MISC
+// -----------------------------------------------------
+
+// MEDIA QUERIES
+// -----------------------------------------------------
+

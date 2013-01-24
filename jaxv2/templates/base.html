@@ -1,92 +1,87 @@
 <!DOCTYPE html>
-{% load pages_tags mezzanine_tags i18n future %}
-<html>
+{% load pages_tags mezzanine_tags i18n future %}<html lang="en">
 <head>
 
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
-<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-<meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <!-- start: Meta -->
+    <meta charset="utf-8">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="author" content="Jackson Gothe-Snape @jacksongs"/>
+    <!-- end: Meta -->
 
-<!-- tabula -->
-<!-- start: Mobile Specific -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<!-- end: Mobile Specific -->
-<!-- end tabula -->
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- end: Mobile Specific -->
 
-{% ifinstalled mezzanine.blog %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-{% endifinstalled %}
+    <!-- start: Facebook Open Graph -->
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+    <!-- end: Facebook Open Graph -->
 
+    <!-- start: CSS --><link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+    {% compress css %}
+    <link href="{{ STATIC_URL }}css/glyphicons.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/halflings.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/font-awesome-ie7.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/social-icons.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/swatchmaker.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/swatchmaker-responsive.css" rel="stylesheet" type="text/css">
 
-<!-- start: CSS -->
+    <!--[if lt IE 9 ]>
+      <link href="css/styleIE.css" rel="stylesheet">
+    <![endif]-->
+    
+    <!--[if IE 9 ]>
+      <link href="css/styleIE9.css" rel="stylesheet">
+    <![endif]-->
+    
+    <!-- end: CSS -->
 
-{% compress css %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/social-icons.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/googlefonts.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-<!-- tabula -->
-<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css">
-<link href="{{ STATIC_URL }}css/layerslider.css" rel="stylesheet" type="text/css">
-<!-- end tabula -->
+    {% ifinstalled mezzanine.blog %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+    {% endifinstalled %}
+    {% endcompress %}
 
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/cartridge.css">
-{% endifinstalled %}
-{% block extra_css %}{% endblock %}
-{% endcompress %}
-
-{% compress js %}
-<script src="{{ STATIC_URL }}mezzanine/js/{{ settings.JQUERY_FILENAME }}"></script>
-<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-<script>
-$(function() {
-    $('.middleinput:text, textarea').addClass('xlarge');
-    $('.control-group label').addClass('control-label');
-});
-</script>
-{% block extra_js %}{% endblock %}
-{% endcompress %}
-<!--[if lt IE 9]>
-<script src="{{ STATIC_URL }}js/html5shiv.js"></script>
-<![endif]-->
 
 {% block extra_head %}{% endblock %}
 
 </head>
-<body id="{% block body_id %}body{% endblock %}">
+<body>
 
-<!-- using tabula structure -->
+    <!--start: Header -->
+    <header>
 
-<header>
-<div class="container">
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                {% page_menu "pages/menus/dropdown.html" %}
-                </ul>
+        <!--start: Container -->
+        <div class="container">
+            
+            <!--start: Navigation -->
+            <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+                <div>
+                    <ul class="nav">
+                    {% page_menu "pages/menus/dropdown.html" %}
+                    </ul>
+                </div>
+            <div class="icons pull-right hidden-phone">
+            <a href="http://vimeo.com/jacksongs" class="social-vimeo"></a>
+            <a href="http://twitter.com/jacksongs" class="social-twitter"></a>
+            <a href="http://instagram.com/jacksongs" class="social-instagram"></a>
+            <a href="http://www.facebook.com/jacksongs" class="social-facebook"></a>
+            <a href="http://au.linkedin.com/in/jacksongs" class="social-linkedin"></a>
             </div>
-            <div class="nav pull-right">
-            <a href="http://vimeo.com/jacksongs" class="social-vimeo pull-right"></a>
-            <a href="http://twitter.com/jacksongs" class="social-twitter pull-right"></a>
-            <a href="http://instagram.com/jacksongs" class="social-instagram pull-right"></a>
-            <a href="http://www.facebook.com/jacksongs" class="social-facebook pull-right"></a>
-            <a href="http://au.linkedin.com/in/jacksongs" class="social-linkedin pull-right"></a>
-            </div>
-            <div class="navbar-search pull-right">
+            <div class="navbar-search hidden-phone">
             {% search_form %}
             </div>
         </div>
@@ -113,38 +108,40 @@ $(function() {
 </div>
 
 <div id="footer">
+    <div id="footerbox">
     <div class="container">
         <div class="row-fluid">
             <div class="span3">
-                <h3><i class="glyphicons-icon white user"></i>About Jackson</h3>
+                <h3><i class="glyphicons-icon white user hidden-tablet"></i>about me</h3>
                 <ul class="arrow_list">
-                    <li>Self-taught web dev</li>
-                    <li>Love of media, arts and sport</li>
-                    <li>Corporate law and public policy experience</li>
-                    <li>Big on new media opportunities</li>
-                    <li><a href="/contact">Click here for enquiries</a></li>
+                    <li>Code wrangler and angle chaser</li>
+                    <li>Canberra-dwelling bush-ranger</li>
+                    <li>Corporate law and government suits currently in storage</li>
+                    <li>Dogless, dog-loving people person</li>
                 </ul>
+                <hr class="visible-phone">
             </div>   
             <div class="span3">
                 <h3>
-                <i class="glyphicons-icon white twitter"></i>
-                Latest Tweet
+                <i class="glyphicons-icon white twitter hidden-tablet"></i>
+                latest tweet
                 </h3>
                 {% block tweets %}
                 {% ifinstalled mezzanine.twitter %}
                 {% include "twitter/tweets.html" %}
                 {% endifinstalled %}
                 {% endblock %}
+                <hr class="visible-phone">
             </div>       
             <div class="span3">
                 
-                <h3><i class="glyphicons-icon white vimeo"></i>From Vimeo</h3>
+                <h3><i class="glyphicons-icon white vimeo hidden-tablet"></i>from vimeo</h3>
             
                 
                 <style id="badge-styles">
                 /* You can modify these CSS styles */
                 .vimeoBadge { margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
-                .vimeoBadge img { border: 0; }
+                .vimeoBadge img { width:100%; border: 0}
                 .vimeoBadge a, .vimeoBadge a:link, .vimeoBadge a:visited, .vimeoBadge a:active { color: #3A75C4; text-decoration: none; cursor: pointer; }
                 .vimeoBadge a:hover { color:#00CCFF; }
                 .vimeoBadge #vimeo_badge_logo { margin-top:10px; width: 57px; height: 16px; }
@@ -153,27 +150,44 @@ $(function() {
                 .vimeoBadge.vertical .clip { float: none; }
                 .vimeoBadge .caption { font: normal 11px verdana,sans-serif; overflow:hidden; width: auto; height: 30px; }
                 .vimeoBadge .clear { display: block; clear: both; visibility: hidden; }
-                .vimeoBadge .s160 { width: 160px; } .vimeoBadge .s80 { width: 80px; } .vimeoBadge .s100 { width: 100px; } .vimeoBadge .s200 { width: 200px; }
+                .vimeoBadge .s160 { width: 160px; } .vimeoBadge .s80 { width: 80px; } .vimeoBadge .s100 { width: 100px; } .vimeoBadge .s200 { }
                 </style><div id="badge">
-                <div align=center><div class="vimeoBadge horizontal">
+                <div><div class="vimeoBadge horizontal">
                 <script src="https://vimeo.com/jacksongs/badgeo/?script=1&badge_layout=horizontal&badge_quantity=1&badge_size=200&badge_stream=uploaded&show_titles=no"></script>
                 </div>
                 </div>
 
             </div>
+            <hr class="visible-phone">
             </div>     
             <div class="span3">
-                <h3><i class="glyphicons-icon white home"></i>These digs</h3>
+                <h3><i class="glyphicons-icon white home hidden-tablet"></i>these digs</h3>
                 <ul class="arrow_list">
                     <li>Built with Aussie-made Mezzanine, atop Django, from Python</li>
                     <li>Served by Heroku and AWS S3</li>
-                    <li>Front-end adapted from the Tabula theme available from Wrap Bootsrap</li>
-                    <li>Repo available at <a href="http://github.com/jacksongs">github</a><li>
+                    <li>Front-end built with LESS and Bootstrap</li>
+                    <li>Repo available at <a href="http://github.com/jacksongs">github</a></li>
                 </ul>
+                <hr class="visible-phone">
             </div>
         </div>
-    </div>
-</div>
+
+    <!--start: Container -->
+                <div class="container visible-phone">
+                    
+                    <div class="foot">
+                    <a href="http://vimeo.com/jacksongs" class="social-vimeo"></a>
+                    <a href="http://twitter.com/jacksongs" class="social-twitter"></a>
+                    <a href="http://instagram.com/jacksongs" class="social-instagram"></a>
+                    <a href="http://www.facebook.com/jacksongs" class="social-facebook"></a>
+                    <a href="http://au.linkedin.com/in/jacksongs" class="social-linkedin"></a>
+                    </div>
+                    <div class="foot">
+                    {% search_form %}
+                    </div>
+                </div>
+        </div>
+
 
     <div id="under-footer">
         
@@ -184,10 +198,11 @@ $(function() {
             <div class="row-fluid">
 
                 <!-- start: Under Footer Copyright -->
-                <div class="span11">
+
+                <div class="span11 foot">
                     
                     <div id="under-footer-copyright">
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>&nbsp;&nbsp;Excluding images/video, you can use and share parts of this website under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+                    <small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>&nbsp;&nbsp;Excluding images/video, you can use and share parts of this website under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</small>
                     </div>
                     
                 </div>
@@ -211,7 +226,17 @@ $(function() {
         
     </div>
     <!-- end: Under Footer -->  
+        </div>
+</div>
+<p></p>
 
+{% compress js %}
+<!-- start: Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ STATIC_URL }}js/jquery-1.8.2.js"></script>
+
+{% endcompress %}
+<!-- end: Java Script -->
 </body>
 
 </html>
