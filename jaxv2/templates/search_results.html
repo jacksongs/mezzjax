@@ -14,15 +14,15 @@
 {% endblock %}
 
 {% block main %}
-
-<p>
+<div id="results">
+<p><h2>Search results</h2>
 {% if results.paginator.count == 0 %}
 {% blocktrans %}
-No results were found in {{ search_type }} matching your query: {{ query }}
+No results were found matching your query: <strong>{{ query }}</strong>. Sorry!
 {% endblocktrans %}
 {% else %}
 {% blocktrans with start=results.start_index end=results.end_index total=results.paginator.count %}
-Showing {{ start }} to {{ end }} of {{ total }} results in {{ search_type }} matching your query: {{ query }}
+Showing {{ start }} to {{ end }} of {{ total }} results matching your query: <strong>{{ query }}</strong>.
 {% endblocktrans %}
 {% endif %}
 </p>
@@ -32,8 +32,9 @@ Showing {{ start }} to {{ end }} of {{ total }} results in {{ search_type }} mat
     <h5>{{ forloop.counter0|add:results.start_index }})
         <a href="{{ result.get_absolute_url }}">{{ result }}</a></h5>
     <p>{{ result.description|truncatewords_html:20|safe }}</p>
-    <a href="{{ result.get_absolute_url }}">{% trans "read more" %}</a>
+    <a href="{{ result.get_absolute_url }}">{% trans "Read more..." %}</a>
     {% endfor %}
+</div>
 </div>
 
 {% pagination_for results %}

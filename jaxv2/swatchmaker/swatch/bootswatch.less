@@ -52,6 +52,20 @@ body {
 	border-bottom-right-radius: 25px;
 }
 
+#results {
+	padding: 20px;
+	margin-bottom: 15px;
+	background-color:rgba(255,255,255,0.5);
+	-webkit-border-top-left-radius: 25px;
+	-webkit-border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	-webkit-border-bottom-left-radius: 25px;
+	-webkit-border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
 #curra {
 	color:rgba(255,255,255,0.5);
 
@@ -352,6 +366,15 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
 }
+
+.pager li > a, .pager li > span {
+  background: transparent;
+  border: 0px solid #DDDDDD;
+  border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  padding: 5px 14px;
+}
 // NAV
 // -----------------------------------------------------
 
@@ -375,4 +398,9 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 // MEDIA QUERIES
 // -----------------------------------------------------
-
+@media only screen and (max-width: 767px) {
+	.post img {
+	margin-right: 0px;
+	width:100%;
+}
+}
