@@ -5299,8 +5299,13 @@ body {
   color: #555555;
   transition: none 0s ease 0s;
 }
+.navbar-inverse .navbar-search .search-query::-webkit-input-placeholder {
+  color: #555555;
+  font-size: 17px;
+  padding-top: 3px;
+}
 .navbar-inverse .navbar-search .search-query:-moz-placeholder {
-  color: #333333;
+  color: #555555;
   font-size: 17px;
 }
 .navbar-search .search-query {

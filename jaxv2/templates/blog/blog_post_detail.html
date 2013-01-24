@@ -27,7 +27,7 @@
             <div class="post first last">
             {% block blog_post_detail_featured_image %}
             {% if blog_post.featured_image %}
-            <img style="float:right; margin-left:10px" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 420 0 %}">
+            <img style="float:left; margin-right:10px" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 420 0 %}">
             {% endif %}
             {% endblock %}
 
